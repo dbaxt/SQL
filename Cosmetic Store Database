@@ -1,0 +1,27 @@
+--Create cosmetic store database
+
+CREATE TABLE cosmetics (id INTEGER PRIMARY KEY, Name TEXT, Section TEXT, Aisle INTEGER, Price INTEGER);
+
+INSERT INTO cosmetics VALUES
+(1, "mascara", "eyes", 3, 10.99),
+(2, "eye liner", "eyes", 3, 7.99),
+(3, "Primer", "face", 5, 12.99),
+(4, "concealer", "face", 5, 7.99),
+(5, "foundation", "face", 5, 20.99),
+(6, "bronzer", "face", 5, 15.99),
+(7, "contour", "face", 4, 13.99),
+(8, "blush", "face", 4, 12.99),
+(9, "lipstick", "lips", 4, 8.99),
+(10, "lip liner", "lips", 4, 5.99),
+(11, "powder", "face", 5, 16.99),
+(12, "eye shadow", "eyes", 3, 4.99),
+(13, "setting spray", "face", 4, 12.99),
+(14, "lip mask", "lips", 4, 15.99),
+(15, "highlighter", "face", 5, 6.99);
+
+--display the database ordered by price
+SELECT * FROM cosmetics ORDER BY price;
+
+--What is the total price of each section?
+SELECT Section, SUM(price) FROM cosmetics GROUP BY Section;
+
